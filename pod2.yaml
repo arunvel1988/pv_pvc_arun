@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arun
+spec:
+  containers:
+    - name: arun
+      image: nginx
+      volumeMounts:
+      - mountPath: /var/www/html
+        name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: 'research-pvc' 
